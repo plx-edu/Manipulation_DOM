@@ -1,0 +1,64 @@
+*, ::after, ::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+main{
+    margin: 0 auto;
+    padding: 5px;
+    max-width: 900px;
+    min-height: 100%;
+
+    align-items: center;
+    background-color: rgb(73, 66, 64);
+}
+
+.cflx{
+    display: flex;
+    flex-direction: column;
+}
+
+.rflx{
+    display: flex;
+    flex-direction: row;
+}
+
+.displayNone{
+    display: none;
+}
+
+
+.container{
+    padding: 5px;
+    /*background-color: rgb(131, 120, 120);*/
+    width: 720px;
+    height: 520px;
+    align-items: center;
+}
+
+.carouselButton{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.fullWidth{
+    width: 100%;
+}
+
+button{
+    border-style: none;
+}
