@@ -4,6 +4,7 @@ console.log(":: Liste de Course");
 
 let list = [];
 let removedList = [];
+let inputField = document.getElementById("itemName");
 
 let addButton = document.getElementById("addButton");
 addButton.addEventListener('click', addItem);
@@ -16,6 +17,9 @@ function addItem(){
     console.log(":: Added an item.");
 
     let item = document.getElementById("itemName").value;
+
+    inputField.value = "";
+    inputField.focus();
 
     if(item === "" || list.includes(item)) return;
 
@@ -31,15 +35,26 @@ function removeItem(){
 
     for(const k of checked){
         if(k.checked){
-            console.log(k.value);
-            // document.getElementById();
+            // console.log(k.value);
             for(const k2 of articles){
-                if(k2.id === k.value) console.log("removing", k2);
+                if(k2.id === k.value){
+                    console.log("removing", k2);
+                    removedList.push(k2);
+                    // k2.remove();
+                    console.log("::::",removedList);
+                    list.splice(list.indexOf(k.value),1);
+                }
             }
-            // removedList.push(k);
         }
     }
-}
+
+    while(removedList.length > 0){
+        removedList[0].remove();
+        removedList.shift();
+        // list.splice(list.indexOf(removedList[0].id),1);
+    }
+
+}// removeItem()
 
 function deleteItem(elem){
     console.log("Deleted an item.");
