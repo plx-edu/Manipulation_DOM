@@ -4,7 +4,9 @@ console.log(":: Liste de Course");
 
 let list = [];
 let removedList = [];
+
 let inputField = document.getElementById("itemName");
+inputField.addEventListener('keyup', enterKeyPressed);
 
 let addButton = document.getElementById("addButton");
 addButton.addEventListener('click', addItem);
@@ -16,7 +18,8 @@ removeButton.addEventListener('click', removeItem);
 function addItem(){
     console.log(":: Added an item.");
 
-    let item = document.getElementById("itemName").value;
+    // let item = document.getElementById("itemName").value;
+    let item = inputField.value;
 
     inputField.value = "";
     inputField.focus();
@@ -28,7 +31,7 @@ function addItem(){
 }
 
 function removeItem(){
-    console.log("Removed an item.");
+    console.log("Removing item(s).");
     
     let articles = document.getElementsByTagName("article");
     let checked = document.getElementsByTagName("input");
@@ -38,10 +41,10 @@ function removeItem(){
             // console.log(k.value);
             for(const k2 of articles){
                 if(k2.id === k.value){
-                    console.log("removing", k2);
+                    // console.log("removing", k2);
                     removedList.push(k2);
                     // k2.remove();
-                    console.log("::::",removedList);
+                    // console.log("::::",removedList);
                     list.splice(list.indexOf(k.value),1);
                 }
             }
@@ -68,6 +71,7 @@ function getItemList(){
 function createArticle(param){
     let article = document.createElement('article');
     article.id = param;
+    article.classList.add("rflx");
 
     article.append(createLabel(param));
     article.append(createInput(param));
@@ -79,6 +83,7 @@ function createLabel(param){
     let label = document.createElement('label');
     label.innerText = param;
     label.for = param;
+    label.classList.add("fullWidth");
 
     return label;
 }
@@ -89,4 +94,12 @@ function createInput(param) {
     input.value = param;
 
     return input;
+}
+
+
+function enterKeyPressed(event){
+    if(event.keyCode === 13){
+        // event.preventDefault(); // ???
+        addItem();
+    }
 }
