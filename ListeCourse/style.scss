@@ -3,6 +3,7 @@ $h100: 100%;
 $primary: #6f979722;
 $secondary: #aee987;
 $tertiary: #fae467;
+$quaternary: #ce3914;
 
 @mixin flex-center(){
     justify-content: center;
@@ -107,6 +108,17 @@ input{
         font-size: 20px;
         text-align: center
     }
+
+    #buttonSection{
+        @include rflx;
+        button:first-child{
+            // color: red;
+            background-color: $quaternary;
+        }
+        button:first-child:hover{
+            background-color: #b80c0c;
+        }
+    }
     button{
         @include cflx;
         @include flex-center;
@@ -122,6 +134,7 @@ input{
         color: $secondary;
         background-color: $tertiary;
     }
+
 }
 
 #itemList{
@@ -132,10 +145,15 @@ input{
 article{
     @include rflx();
     @include fullSize();
-    padding: 2px;
+    padding: 5px;
+    margin-bottom: 2px;
 
     background-color: $primary;
 
+}
+#slctAll{
+    // margin-bottom: 5px;
+    border-bottom: solid 2px $secondary;
 }
 
 .displayNone{

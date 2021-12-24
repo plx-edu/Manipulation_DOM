@@ -14,4 +14,67 @@ body {
   overflow-y: auto;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #6f979722;
+  max-width: 500px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  background-color: #aee987;
+}
+
+#player1, #player2 {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 250px;
+  background-color: #ffb9b9;
+}
+#player1 p, #player2 p {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 175px;
+}
+#player1 button, #player2 button {
+  width: 100%;
+  height: 40px;
+}
+
+#player2 {
+  background-color: #9595ff;
+}
+
+#settings {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+#settings * {
+  width: 100%;
+}
+
+button, input {
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
 /*# sourceMappingURL=style.css.map */

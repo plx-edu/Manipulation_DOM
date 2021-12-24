@@ -33,10 +33,13 @@ function addItem(){
 function removeItem(){
     console.log("Removing item(s).");
     
+    // DO NOT DELETE THE SELECT ALL OPTION ;_;
+    let selectAll = document.getElementById("selectAll");
+
     let checked = document.getElementsByTagName("input");
 
     for(const k of checked){
-        if(k.checked){
+        if(k.checked && k !== selectAll){
             // console.log(k.parentElement);
             removedList.push(k.parentElement);
         }
@@ -47,7 +50,6 @@ function removeItem(){
         removedList[0].remove();
         removedList.shift();
     }
-
 }// removeItem()
 
 function deleteItem(elem){

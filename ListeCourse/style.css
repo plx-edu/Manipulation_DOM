@@ -67,6 +67,16 @@ input {
   font-size: 20px;
   text-align: center;
 }
+#inputSection #buttonSection {
+  display: flex;
+  flex-direction: row;
+}
+#inputSection #buttonSection button:first-child {
+  background-color: #ce3914;
+}
+#inputSection #buttonSection button:first-child:hover {
+  background-color: #b80c0c;
+}
 #inputSection button {
   display: flex;
   flex-direction: column;
@@ -93,8 +103,13 @@ article {
   flex-direction: row;
   width: 100%;
   height: 100%;
-  padding: 2px;
+  padding: 5px;
+  margin-bottom: 2px;
   background-color: #6f979722;
+}
+
+#slctAll {
+  border-bottom: solid 2px #aee987;
 }
 
 .displayNone {

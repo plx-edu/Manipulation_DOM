@@ -9,31 +9,31 @@
     </head>
 
     <body>
-        <main class="cflx">
+        <main class="">
             <section class="container">
                 <h3>Liste:</h3>
 
-                <section class="cflx">
+                <section class="fullWidth">
                     <p>to do: add select/deselect all</p>
 
                     <section id="itemList">
-                        <article class="rflx" style="margin-bottom: 5px; border-bottom: solid 2px black;">
-                            <label class="fullWidth">(de)Select all:</label>
-                            <input type="checkbox" unchecked>
+                        <article id="slctAll">
+                            <!-- <label class="fullWidth">Select all:</label> -->
+                            <label class="fullWidth"></label>
+                            <input id="selectAll" type="checkbox" unchecked>
                         </article>
-                        <br>
                         <!-- Items will be inserted here -->
                     </section>
                 </section>
 
-                <section id="inputSection" class="">
-                    <input id="itemName" class="fullWidth" placeholder="..." type="text">
-                    <button id="addButton">+</button>
+                <section id="inputSection">
+                    <input id="itemName" placeholder="..." type="text">
+                    <section id="buttonSection">
+                        <button id="removeButton">-</button>
+                        <button id="addButton">+</button>
+                    </section>
                 </section>
 
-                <section class="displayNone" style="margin-top: 5px; border-top: solid 2px black;">
-                    <button id="removeButton">Enlever</button>
-                </section>
             </section>
         </main>
     </body>
