@@ -24,7 +24,7 @@ function addItem(){
     inputField.value = "";
     inputField.focus();
 
-    if(item === "" || list.includes(item)) return;
+    if(item.trim() === "" || list.includes(item)) return;
 
     list.push(item);
     getItemList().append(createArticle(item));
@@ -33,28 +33,19 @@ function addItem(){
 function removeItem(){
     console.log("Removing item(s).");
     
-    let articles = document.getElementsByTagName("article");
     let checked = document.getElementsByTagName("input");
 
     for(const k of checked){
         if(k.checked){
-            // console.log(k.value);
-            for(const k2 of articles){
-                if(k2.id === k.value){
-                    // console.log("removing", k2);
-                    removedList.push(k2);
-                    // k2.remove();
-                    // console.log("::::",removedList);
-                    list.splice(list.indexOf(k.value),1);
-                }
-            }
+            // console.log(k.parentElement);
+            removedList.push(k.parentElement);
         }
     }
 
     while(removedList.length > 0){
+        list.splice(list.indexOf(removedList[0].id),1);
         removedList[0].remove();
         removedList.shift();
-        // list.splice(list.indexOf(removedList[0].id),1);
     }
 
 }// removeItem()

@@ -5,21 +5,18 @@
         <title>:: Liste de Course ::</title>
         <link rel="stylesheet" href="style.css">
         <script defer type="text/javascript" src="script.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     </head>
 
     <body>
         <main class="cflx">
-            <section class="container cflx">
-                <section class="rflx">
-                    <input id="itemName" placeholder="..." type="text">
-                    <button id="addButton">Ajouter</button>
-                </section>
+            <section class="container">
+                <h3>Liste:</h3>
 
                 <section class="cflx">
-                    <h3>Liste:</h3>
                     <p>to do: add select/deselect all</p>
 
-                    <section id="itemList" class="cflx">
+                    <section id="itemList">
                         <article class="rflx" style="margin-bottom: 5px; border-bottom: solid 2px black;">
                             <label class="fullWidth">(de)Select all:</label>
                             <input type="checkbox" unchecked>
@@ -29,7 +26,12 @@
                     </section>
                 </section>
 
-                <section class="cflx" style="margin-top: 5px; border-top: solid 2px black;">
+                <section id="inputSection" class="">
+                    <input id="itemName" class="fullWidth" placeholder="..." type="text">
+                    <button id="addButton">+</button>
+                </section>
+
+                <section class="displayNone" style="margin-top: 5px; border-top: solid 2px black;">
                     <button id="removeButton">Enlever</button>
                 </section>
             </section>
