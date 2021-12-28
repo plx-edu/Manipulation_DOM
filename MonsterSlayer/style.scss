@@ -3,6 +3,10 @@ $h100: 100%;
 $primary: #6f979722;
 $secondary: #aee987;
 $tertiary: #fae467;
+$playerColor: hsl(93, 71%, 36%);
+$playerColorDark: hsl(93, 71%, 25%);
+$monsterColor: hsl(0, 55%, 41%);
+$monsterColorDark: hsl(0, 55%, 30%);
 
 @mixin flex-center(){
     justify-content: center;
@@ -23,6 +27,11 @@ $tertiary: #fae467;
     flex-direction: row;
 }
 
+@mixin teamColor($clr){
+    border: solid 2px $clr;
+    color: $clr;
+}
+
 *, ::before, ::after{
     box-sizing: border-box;
 	margin: 0;
@@ -36,4 +45,167 @@ html, body{
 body{
     overflow: hidden;
     overflow-y: auto;
+
+    font-family: Arial, Helvetica, sans-serif;
+    // font-family: 'Courier New', Courier, monospace;
+}
+
+main{
+    @include cflx;
+    @include flex-center;
+
+    background-color: $primary;
+    min-width: 600px;
+    max-width: 650px;
+    min-height: 100%;
+
+    margin: 0 auto;
+}
+
+button{
+    border: none;
+    padding: 5px;
+
+    width: $w100;
+
+    font-family: inherit;
+}
+
+.progOuter{
+    @include rflx;
+
+    min-width: 250px;
+    min-height: 25px;
+
+    margin: 2px;
+    padding: 1px;
+    // overflow: hidden;
+
+    position: relative;
+    // justify-content: space-between;
+
+    // border: solid 2px rgb(187, 187, 187);
+    border-radius: 5px;
+    background-color: #d2d2d2;
+
+    .progInner{
+        max-width: 100%;
+        min-height: 100%;
+        border-radius: 3px;
+    }
+
+    p{
+        @include fullSize;
+
+        position: absolute;
+        top: 2px;
+
+        text-align: center;
+    }
+}
+#playerBar{
+    @extend .progOuter;
+    @include teamColor($playerColorDark);
+
+    .progInner{
+        background-color: $playerColor;
+    }
+}
+#monsterBar{
+    @extend .progOuter;
+    @include teamColor($monsterColorDark);
+
+    .progInner{
+        background-color: $monsterColor;
+    }
+}
+
+#cardSection{
+    @include rflx;
+    min-width: 550px;
+    justify-content: space-between;
+    align-items: center;
+
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card{
+    @include cflx;
+    @include flex-center;
+    
+    border: solid 2px rgb(187, 187, 187);
+    border-radius: 5px;
+    
+    .log{
+        @include cflx;
+        // @include fullSize;
+        overflow: hidden;
+        // overflow-y: auto;
+
+        width: 250px;
+        height: 250px;
+
+        margin: 2px;
+
+        border: solid 2px rgb(187, 187, 187);
+        border-radius: 5px;
+    }
+    p:first-child{
+        margin: 5px;
+    }
+}
+#player{
+    border-color: $playerColorDark;
+}
+#monster{
+    border-color: $monsterColorDark;
+}
+
+#bttnSection{
+    width: 550px;
+
+    border: solid 2px hsl(0, 0%, 45%);
+    border-radius: 5px;
+    overflow: hidden;
+
+    #attack{
+        color: hsla(352, 56%, 46%);
+    }
+    #special{
+        color: hsl(29, 77%, 44%);
+    }
+    #heal{
+        color: hsl(138, 70%, 29%);
+    }
+    
+    #start{
+        color: hsl(216, 57%, 16%);
+    }
+}
+
+.cflx{
+    @include cflx();
+}
+.rflx{
+    @include rflx();
+}
+
+.displayNone{
+    display: none;
+}
+
+ul{
+    list-style: none;
+    .v1{
+        background-color: hsl(0, 0%, 90%);
+    }
+    .v2{
+        background-color: hsl(0, 0%, 80%);
+    }
+}
+li{
+    width: 100%;
+    text-align: center;
 }
