@@ -18,9 +18,6 @@ let selectAll = document.getElementById("selectAll");
 selectAll.addEventListener('change', checkAll);
 
 function addItem(){
-    console.log(":: Added an item.");
-
-    // let item = document.getElementById("itemName").value;
     let item = inputField.value;
 
     inputField.value = "";
@@ -33,14 +30,10 @@ function addItem(){
 }
 
 function removeItem(){
-    console.log("Removing item(s).");
-    
-    // DO NOT DELETE THE SELECT ALL OPTION ;_;
     let checked = getCheckedInput();
 
     for(const k of checked){
         if(k.checked){
-            // console.log(k.parentElement);
             removedList.push(k.parentElement);
         }
     }
@@ -53,7 +46,7 @@ function removeItem(){
 
     checkAll();
     showRemoveButton();
-}// removeItem()
+}
 
 function getItemList(){
     return document.getElementById("itemList");
@@ -88,10 +81,8 @@ function createInput(param) {
     return input;
 }
 
-
 function enterKeyPressed(event){
     if(event.keyCode === 13){
-        // event.preventDefault(); // ???
         addItem();
     }
 }
@@ -105,11 +96,8 @@ function checkAll(){
     }
 
     if(selectAll.checked) {
-
         for(const k of checked){
             if(k.type === "checkbox") k.checked = true;
-            // console.log(k);
-            // console.log(k.type);
         }
     }else {
         for(const k of checked){
@@ -124,6 +112,7 @@ function getCheckedInput(){
     let checked = document.getElementsByTagName("input");
     let arr = [];
 
+    // DO NOT ADD THE SELECT ALL OPTION ;_;
     for(const k of checked){
         if(k !== selectAll && k.type === "checkbox"){
             arr.push(k);
@@ -159,14 +148,12 @@ function showRemoveButton(){
 
     for(const k of checked){
         if(k.checked){
-            // removeButton.classList.remove("displayNone");
             removeButton.style.display = '';
             return
             
         }
     }
     
-    // removeButton.classList.add("displayNone");
     removeButton.style.display = "none";
 }
 
