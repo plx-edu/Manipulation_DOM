@@ -45,7 +45,7 @@ function act(e){
             break;
         case "special":
             dmgDealt = getRandomIntInclusive(10, 20);
-            ptxt += `Deals ${dmgDealt}pts damage!`;
+            ptxt += `Deal ${dmgDealt}pts damage!`;
             break;
         case "heal":
             setPlayerHealth(10);
