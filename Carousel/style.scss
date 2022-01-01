@@ -1,0 +1,119 @@
+$w100: 100%;
+$h100: 100%;
+$primary: #6f979722;
+$secondary: #6fcaee;
+$tertiary: #c0cfd5;
+
+@mixin flex-center(){
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fullSize(){
+    @extend .fullHeight;
+    @extend .fullWidth;
+}
+
+@mixin cflx(){
+    display: flex;
+    flex-direction: column;
+}
+@mixin rflx(){
+    display: flex;
+    flex-direction: row;
+}
+
+*, ::after, ::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body{
+    @include fullSize;
+}
+
+body{
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+main{
+    @include cflx;
+
+    margin: 0 auto;
+    padding: 5px;
+
+    min-height: 100%;
+
+    align-items: center;
+    background-color: $primary;
+}
+
+.displayNone{
+    display: none;
+}
+
+.container{
+    @include cflx;
+    @include flex-center;
+
+    border: 2px solid $secondary;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: $primary;
+}
+
+#carousel{
+    @include rflx;
+    align-items: center;
+
+    margin: 5px;
+    width: 720px;
+    height: 520px;
+
+    border: 2px solid $secondary;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+.buttonSection{
+    @include rflx;
+    @extend .fullWidth;
+
+    padding: 5px;
+
+    button{
+        @include fullSize;
+
+        padding: 15px;
+        cursor: pointer;
+        
+        border: 2px solid $secondary;
+        border-radius: 5px;
+        background-color: $primary;
+    }
+    button:hover{
+        background-color: $secondary;
+    }
+}
+
+.imgContainer{
+    @include fullSize;
+    text-align: center;
+    padding: 5px;
+}
+
+h4{
+    margin: 5px;
+}
+
+.fullWidth{
+    width: 100%;
+}
+.fullHeight{
+    height: 100%;
+}
