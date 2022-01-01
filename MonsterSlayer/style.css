@@ -18,13 +18,23 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: #6f979722;
-  min-width: 600px;
-  max-width: 650px;
   min-height: 100%;
   margin: 0 auto;
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px;
+  border: solid 2px #6fcaee;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #6f979722;
 }
 
 button {
@@ -59,19 +69,19 @@ button {
 }
 
 #playerBar {
-  border: solid 2px #3b6d12;
-  color: #3b6d12;
+  border: solid 2px rgba(59, 110, 18, 0.5);
+  color: rgba(59, 110, 18, 0.5);
 }
 #playerBar .progInner {
-  background-color: #559d1b;
+  background-color: rgba(85, 157, 27, 0.5);
 }
 
 #monsterBar {
-  border: solid 2px #772222;
-  color: #772222;
+  border: solid 2px rgba(119, 34, 34, 0.5);
+  color: rgba(119, 34, 34, 0.5);
 }
 #monsterBar .progInner {
-  background-color: #a22f2f;
+  background-color: rgba(162, 47, 47, 0.5);
 }
 
 #cardSection {
@@ -89,7 +99,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid 2px #bbbbbb;
+  border: solid 2px #6fcaee;
   border-radius: 5px;
 }
 .card .log {
@@ -99,7 +109,7 @@ button {
   width: 250px;
   height: 250px;
   margin: 2px;
-  border: solid 2px #bbbbbb;
+  border: solid 2px #6f979722;
   border-radius: 5px;
 }
 .card p:first-child {
@@ -107,16 +117,22 @@ button {
 }
 
 #player {
-  border-color: #3b6d12;
+  border-color: rgba(59, 110, 18, 0.5);
+}
+#player .log {
+  border-color: rgba(59, 110, 18, 0.5);
 }
 
 #monster {
-  border-color: #772222;
+  border-color: rgba(119, 34, 34, 0.5);
+}
+#monster .log {
+  border-color: rgba(119, 34, 34, 0.5);
 }
 
 #bttnSection {
   width: 550px;
-  border: solid 2px #737373;
+  border: solid 2px #6fcaee;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -160,6 +176,10 @@ ul .v2 {
 li {
   width: 100%;
   text-align: center;
+}
+
+h4 {
+  margin: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

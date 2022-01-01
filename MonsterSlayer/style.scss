@@ -1,12 +1,12 @@
 $w100: 100%;
 $h100: 100%;
 $primary: #6f979722;
-$secondary: #aee987;
-$tertiary: #fae467;
-$playerColor: hsl(93, 71%, 36%);
-$playerColorDark: hsl(93, 71%, 25%);
-$monsterColor: hsl(0, 55%, 41%);
-$monsterColorDark: hsl(0, 55%, 30%);
+$secondary: #6fcaee;
+$tertiary: #c0cfd5;
+$playerColor: hsla(93, 71%, 36%, 0.5);
+$playerColorDark: hsla(93, 72%, 25%, 0.5);
+$monsterColor: hsla(0, 55%, 41%, 0.5);
+$monsterColorDark: hsla(0, 56%, 30%, 0.5);
 
 @mixin flex-center(){
     justify-content: center;
@@ -52,14 +52,26 @@ body{
 
 main{
     @include cflx;
-    @include flex-center;
 
     background-color: $primary;
-    min-width: 600px;
-    max-width: 650px;
     min-height: 100%;
 
     margin: 0 auto;
+    padding: 5px;
+}
+
+.container{
+    @include cflx;
+    @include flex-center;
+
+    margin: 0 auto;
+    padding: 5px;
+
+    border: solid 2px $secondary;
+    border-radius: 5px;
+    overflow: hidden;
+
+    background-color: $primary;
 }
 
 button{
@@ -79,12 +91,9 @@ button{
 
     margin: 2px;
     padding: 1px;
-    // overflow: hidden;
 
     position: relative;
-    // justify-content: space-between;
 
-    // border: solid 2px rgb(187, 187, 187);
     border-radius: 5px;
     background-color: #d2d2d2;
 
@@ -135,21 +144,19 @@ button{
     @include cflx;
     @include flex-center;
     
-    border: solid 2px rgb(187, 187, 187);
+    border: solid 2px $secondary;
     border-radius: 5px;
     
     .log{
         @include cflx;
-        // @include fullSize;
         overflow: hidden;
-        // overflow-y: auto;
 
         width: 250px;
         height: 250px;
 
         margin: 2px;
 
-        border: solid 2px rgb(187, 187, 187);
+        border: solid 2px $primary;
         border-radius: 5px;
     }
     p:first-child{
@@ -158,15 +165,21 @@ button{
 }
 #player{
     border-color: $playerColorDark;
+    .log{
+        border-color: $playerColorDark;
+    }
 }
 #monster{
     border-color: $monsterColorDark;
+    .log{
+        border-color: $monsterColorDark;
+    }
 }
 
 #bttnSection{
     width: 550px;
 
-    border: solid 2px hsl(0, 0%, 45%);
+    border: solid 2px $secondary;
     border-radius: 5px;
     overflow: hidden;
 
@@ -209,3 +222,9 @@ li{
     width: 100%;
     text-align: center;
 }
+
+h4{
+    margin: 5px;
+}
+
+

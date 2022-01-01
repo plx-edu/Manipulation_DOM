@@ -10,52 +10,54 @@
 
     <body>
         <main class="">
-            <h3>Monster Slayer™</h3>
-            <section id="cardSection">
-                <!-- <progress id="playerBar" min="0" max="100" value="75"> 70% </progress>
-                <progress id="monsterBar" min="0" max="100" value="65"> 70% </progress> -->
-                
-                <section id="player" class="card">
-                    <p>Player</p>
-                    <section class="log">
-                        <ul></ul>
+            <section class="container">
+                <h4>- Monster Slayer™ -</h4>
+                <section id="cardSection">
+                    <!-- <progress id="playerBar" min="0" max="100" value="75"> 70% </progress>
+                        <progress id="monsterBar" min="0" max="100" value="65"> 70% </progress> -->
+                        
+                        <section id="player" class="card">
+                            <p>Player</p>
+                            <section class="log">
+                                <ul></ul>
+                            </section>
+                            
+                            <div id="playerBar" class="progOuter">
+                                <div class="progInner"></div>
+                                <p>100</p>
+                            </div>
+                        </section>
+                        
+                        <p>vs</p>
+                        
+                        <section id="monster" class="card">
+                            <p>Monster</p>
+                            <section class="log">
+                                <ul></ul>
+                            </section>
+                            
+                            <div id="monsterBar" class="progOuter">
+                                <div class="progInner"></div>
+                                <p>100</p>
+                            </div>
+                        </section>
                     </section>
-
-                    <div id="playerBar" class="progOuter">
-                        <div class="progInner"></div>
-                        <p>100</p>
-                    </div>
-                </section>
-
-                <p>vs</p>
-
-                <section id="monster" class="card">
-                    <p>Monster</p>
-                    <section class="log">
-                        <ul></ul>
+                    
+                    <section id="bttnSection" >
+                        <section id="actionBttns" class="rflx displayNone">
+                            <button id="attack">Attack</button>
+                            <button id="special">Special Attack</button>
+                            <button id="heal">Heal</button>
+                            <button id="giveUp">Run</button>
+                        </section>
+                        
+                        <section id="startBttn">
+                            <button id="start">
+                                New Game
+                            </button>
+                        </section>
                     </section>
-
-                    <div id="monsterBar" class="progOuter">
-                        <div class="progInner"></div>
-                        <p>100</p>
-                    </div>
                 </section>
-            </section>
-
-            <section id="bttnSection" >
-                <section id="actionBttns" class="rflx displayNone">
-                    <button id="attack">Attack</button>
-                    <button id="special">Special Attack</button>
-                    <button id="heal">Heal</button>
-                    <button id="giveUp">Run</button>
-                </section>
-
-                <section id="startBttn">
-                    <button id="start">
-                        New Game
-                    </button>
-                </section>
-            </section>
         </main>
     </body>
 </html>
