@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html, body {
@@ -17,12 +18,21 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  padding: 5px;
+  min-height: 100%;
+  background-color: #6f979722;
+}
+
+#mc {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #6f979722;
-  max-width: 500px;
-  min-height: 100%;
   margin: 0 auto;
+  border: solid 2px #6fcaee;
+  border-radius: 5px;
+  background-color: #6f979722;
 }
 
 .container {
@@ -31,7 +41,7 @@ main {
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  background-color: #aee987;
+  background-color: #6fcaee;
 }
 
 #player1, #player2 {
@@ -48,8 +58,10 @@ main {
   font-size: 175px;
 }
 #player1 button, #player2 button {
-  width: 100%;
+  margin: 5px;
   height: 40px;
+  border: solid 2px #6fcaee;
+  border-radius: 5px;
 }
 
 #player2 {
@@ -59,10 +71,16 @@ main {
 #settings {
   display: flex;
   flex-direction: row;
+  border-top: solid 2px #6fcaee;
+  border-bottom: solid 2px #6fcaee;
   width: 100%;
 }
 #settings * {
   width: 100%;
+}
+
+h4 {
+  margin: 5px;
 }
 
 button, input {
@@ -71,10 +89,16 @@ button, input {
 
 button {
   cursor: pointer;
+  background-color: #6f979722;
+}
+
+button:hover {
+  background-color: #6fcaee;
 }
 
 button:disabled {
   cursor: default;
+  background-color: #6f979722;
 }
 
 /*# sourceMappingURL=style.css.map */

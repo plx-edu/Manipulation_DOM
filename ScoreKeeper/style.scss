@@ -1,8 +1,8 @@
 $w100: 100%;
 $h100: 100%;
 $primary: #6f979722;
-$secondary: #aee987;
-$tertiary: #fae467;
+$secondary: #6fcaee;
+$tertiary: #c0cfd5;
 $teamBlue: #9595ff;
 $teamRed: #ffb9b9;
 
@@ -29,6 +29,8 @@ $teamRed: #ffb9b9;
     box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html, body{
@@ -42,13 +44,25 @@ body{
 
 main{
     @include cflx;
-    @include flex-center;
-
-    background-color: $primary;
-    max-width: 500px;
-    min-height: 100%;
 
     margin: 0 auto;
+    padding: 5px;
+    
+    min-height: $h100;
+    
+    background-color: $primary;
+}
+
+#mc{
+    @include cflx;
+    @include flex-center;
+    
+    margin: 0 auto;
+
+    border: solid 2px $secondary;
+    border-radius: 5px;
+
+    background-color: $primary;
 }
 
 .container{
@@ -76,8 +90,11 @@ main{
         font-size: 175px;
     }
     button{
-        width: 100%;
+        margin: 5px;
         height: 40px;
+
+        border: solid 2px $secondary;
+        border-radius: 5px;
     }
 }
 #player2{
@@ -87,11 +104,18 @@ main{
 
 #settings{
     @include rflx;
+
+    border-top: solid 2px $secondary;
+    border-bottom: solid 2px $secondary;
+
     width: 100%;
     *{
         width: 100%;
     }
+}
 
+h4{
+    margin: 5px;
 }
 
 button, input{
@@ -99,7 +123,12 @@ button, input{
 }
 button{
     cursor: pointer;
+    background-color: $primary;
+}
+button:hover{
+    background-color: $secondary;
 }
 button:disabled{
     cursor: default;
+    background-color: $primary;
 }
