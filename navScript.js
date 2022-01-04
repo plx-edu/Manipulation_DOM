@@ -20,11 +20,11 @@ function createNav(){
         
         if(k === "Home"){
             a.innerText = k;
-            a.href = `../`;
+            a.href = `..`;
         }else{
             if(k === getCurrentPath()) continue;
             a.innerText = k;
-            a.href = `../${k}/`;
+            a.href = `../${k}`;
         }
         
         li.append(a);
