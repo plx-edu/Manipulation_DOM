@@ -172,6 +172,10 @@ function initGame(){
 
     let arr = document.getElementsByTagName("ul");
     for(const k of arr){
+        // Keep nav bar items
+        if(k.parentNode.tagName === "NAV"){
+            continue
+        };
         k.innerHTML = '';
     }
 }
