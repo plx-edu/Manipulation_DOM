@@ -98,7 +98,8 @@ input{
         padding: 0 5px;
 
         font-size: 20px;
-        text-align: center
+        text-align: center;
+        text-transform: capitalize;
     }
 
     #buttonSection{
@@ -143,6 +144,8 @@ article{
     overflow-wrap: break-word;
     // overflow-wrap: anywhere;
 
+    text-transform: capitalize;
+
     label{
         overflow: hidden;
     }
@@ -171,7 +174,5 @@ h4{
 .fullHeight{
     height: $h100;
 }
-
-
 
 

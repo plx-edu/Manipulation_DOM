@@ -60,6 +60,7 @@ input {
   padding: 0 5px;
   font-size: 20px;
   text-align: center;
+  text-transform: capitalize;
 }
 #inputSection #buttonSection {
   display: flex;
@@ -93,6 +94,7 @@ article {
   margin-bottom: 2px;
   background-color: #6f979722;
   overflow-wrap: break-word;
+  text-transform: capitalize;
 }
 article label {
   overflow: hidden;

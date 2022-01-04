@@ -123,5 +123,39 @@ h4{
 }
 
 
+nav{
+    @include rflx;
+    @include flex-center;
 
+    background-color: $primary;
+    border-bottom: 1px solid $primary;
+    padding: 5px;
+    color: $tertiary;
+
+    ul{
+        list-style: none;
+        display: inherit;
+
+        li{
+            display: inherit;
+
+            margin: 2px;
+
+            border: 1px solid $primary;
+            border-radius: 5px;
+        }
+        li:hover{
+            border-color: $secondary;
+            color: $secondary
+        }
+    }
+    a{
+        @include fullSize;
+
+        padding: 5px 10px;
+        
+        text-decoration: none;
+        color: inherit;
+    }
+}
 

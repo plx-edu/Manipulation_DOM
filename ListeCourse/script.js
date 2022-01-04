@@ -18,7 +18,7 @@ let selectAll = document.getElementById("selectAll");
 selectAll.addEventListener('change', checkAll);
 
 function addItem(){
-    let item = inputField.value;
+    let item = inputField.value.toLowerCase();
 
     inputField.value = "";
     inputField.focus();
@@ -30,22 +30,24 @@ function addItem(){
 }
 
 function removeItem(){
-    let checked = getCheckedInput();
-
-    for(const k of checked){
-        if(k.checked){
-            removedList.push(k.parentElement);
+    if(confirm("Confirm Delete ?")){
+        let checked = getCheckedInput();
+        
+        for(const k of checked){
+            if(k.checked){
+                removedList.push(k.parentElement);
+            }
         }
+        
+        while(removedList.length > 0){
+            list.splice(list.indexOf(removedList[0].id),1);
+            removedList[0].remove();
+            removedList.shift();
+        }
+        
+        checkAll();
+        showRemoveButton();
     }
-
-    while(removedList.length > 0){
-        list.splice(list.indexOf(removedList[0].id),1);
-        removedList[0].remove();
-        removedList.shift();
-    }
-
-    checkAll();
-    showRemoveButton();
 }
 
 function getItemList(){
